@@ -1,16 +1,18 @@
 <template>
-  <h1> {{ name }} </h1>
+  <search-wrapper>
+    <search-toolbar />
+  </search-wrapper>
 </template>
 
 <script>
-import { ref } from 'vue'
+import searchWrapper from '@/components/searchWrapper'
+import searchToolbar from '@/components/searchToolbar'
 
 export default {
   name: 'App',
-  setup() {
-    const name = ref('Bartosz')
-
-    return { name }
+  components: {
+    searchWrapper,
+    searchToolbar, 
   }
 }
 </script>
@@ -24,6 +26,7 @@ export default {
 
 body {
   min-width: 100vw;
+  background: #E0E0E0 none;
 }
 
 html, body {
@@ -34,7 +37,8 @@ html, body {
 }
 
 #app {
-  width: 100%;
+  width: 60%;
+  margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
